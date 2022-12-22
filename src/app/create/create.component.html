@@ -1,0 +1,22 @@
+<div class="createMainDiv">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="userData.title" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Value</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="userData.value" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="addBtnDiv">
+
+        <button type="button" (click)="save()" class="btn btn-success addBtn">Save</button>
+    </div>
+    
+</div>

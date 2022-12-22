@@ -1,0 +1,47 @@
+<div class="viewMainDiv">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" *ngFor="let conf of tableHeaderConfig">
+                    <div>{{conf.title}}</div>
+                    <div *ngIf="conf.isSearchEnabled && conf.title=='TITLE'">
+                        <input id="{{conf.title}}" (keyup)="filterUserDataList()" [(ngModel)]="titleFilterText" class="form-control mr-sm-2"
+                            type="search" placeholder="filter" aria-label="Search" (click)="filterUserDataList()">
+                    </div>
+                    <div *ngIf="conf.isSearchEnabled && conf.title=='VALUE'">
+                        <input id="{{conf.title}}" (keyup)="filterUserDataList()" [(ngModel)]="valueFilterText" class="form-control mr-sm-2"
+                            type="search" placeholder="filter" aria-label="Search"  (click)="filterUserDataList()">
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let userData of filteredUserDataList; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{userData.title}}
+
+                </td>
+                <td>{{userData.value}}
+
+                </td>
+                <td>
+                    <div>
+                        <div class="cpDel">
+                            <button class="btn btn-success  btn-sm" (click)="copyMessage(userData.value)">Copy</button>
+                        </div>
+                        <div class="cpDel">
+                            <button class="btn btn-danger  btn-sm" (click)="deleteUserData(userData.index)">delete</button>
+                        </div>
+                        <!-- <div class="cpDel">
+                            <button class="btn btn-success  btn-sm" (click)="editUserData(userData.index)">Edit</button>
+                        </div> -->
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

@@ -1,0 +1,12 @@
+.alert
+{
+    position: absolute;
+    /* margin: 0 auto; */
+    width: 90%;
+    margin-left: 5%;
+    bottom: 0;
+}
+.nav-link
+{
+    color: black !important;
+}
